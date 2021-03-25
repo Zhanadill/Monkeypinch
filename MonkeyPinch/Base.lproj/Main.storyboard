@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MonkeyPinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jungle" translatesAutoresizingMaskIntoConstraints="NO" id="AKF-tW-aOb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banana" translatesAutoresizingMaskIntoConstraints="NO" id="aBB-c2-gkN">
+                                <rect key="frame" x="20" y="525" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kXP-yl-YYc" appends="YES" id="U6j-T8-yb0"/>
+                                    <outletCollection property="gestureRecognizers" destination="6bf-mm-Jyi" appends="YES" id="PJp-1c-gZ0"/>
+                                    <outletCollection property="gestureRecognizers" destination="qyo-Eg-H1P" appends="YES" id="JIl-o3-fTZ"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monkey" translatesAutoresizingMaskIntoConstraints="NO" id="nKk-lX-7ux">
+                                <rect key="frame" x="192" y="116" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uCa-Hd-Ucp" appends="YES" id="vr7-U7-g7D"/>
+                                    <outletCollection property="gestureRecognizers" destination="rGi-nm-vhE" appends="YES" id="3JK-i4-aE9"/>
+                                    <outletCollection property="gestureRecognizers" destination="hd6-8V-Io3" appends="YES" id="XCl-SK-bBU"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AKF-tW-aOb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="699-hS-MTT"/>
+                            <constraint firstAttribute="bottom" secondItem="AKF-tW-aOb" secondAttribute="bottom" id="9OX-28-vuv"/>
+                            <constraint firstItem="AKF-tW-aOb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CJY-Sk-SAP"/>
+                            <constraint firstItem="AKF-tW-aOb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SR4-5U-KYh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="interactiveSubviews" destination="aBB-c2-gkN" collectionClass="NSMutableArray" id="0IY-Co-495"/>
+                        <outletCollection property="interactiveSubviews" destination="nKk-lX-7ux" collectionClass="NSMutableArray" id="c7J-bs-nYR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uCa-Hd-Ucp" userLabel="Monkey Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="lcC-Qg-gT4"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="SYR-dM-BgJ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="rGi-nm-vhE" userLabel="Monkey Pinch Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="2aZ-E1-8Cu"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="fJp-vZ-XOS"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="hd6-8V-Io3" userLabel="Monkey Rotation Gesture Recognizer">
+                    <connections>
+                        <action selector="handleRotation:" destination="BYZ-38-t0r" id="8Hs-1m-8lZ"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="QMi-hJ-7xb"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="kXP-yl-YYc" userLabel="Banana Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="G9F-By-N60"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="9P2-AW-ACA"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="6bf-mm-Jyi" userLabel="Banana Pinch Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="4N6-K7-ytQ"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Gk6-6J-TQd"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="qyo-Eg-H1P" userLabel="Banana Rotation Gesture Recognizer">
+                    <connections>
+                        <action selector="handleRotation:" destination="BYZ-38-t0r" id="FpN-YO-8dG"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="gT7-dj-o4h"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Jungle" width="960" height="384"/>
+        <image name="banana" width="500" height="500"/>
+        <image name="monkey" width="500" height="500"/>
+    </resources>
+</document>
